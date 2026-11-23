@@ -1,0 +1,227 @@
+[
+  {
+    "config": {
+      "alg": "entropy",
+      "temp": 0.6,
+      "steps": 64,
+      "mode": "unified_fewshot"
+    },
+    "wall_sec": 84.2,
+    "samples": [
+      {
+        "id": "infchat_003",
+        "active_lens": [
+          127,
+          20
+        ],
+        "order": {
+          "h_order_bits": 0.0,
+          "rho_ltr": 0.9982592600643312,
+          "n_valid_rho_seqs": 2.0,
+          "mean_active_tokens": 73.5
+        },
+        "texts": [
+          "[Your name] [Your] [Dollarton Liquor Store] [Date] [Your’s Name] [Dollarton Liquor Store] [Your city] [Your state] [Your zip code] [Your’s Name] [ am writing interested in working at Dollarton Liquor Store. I am you a I ",
+          "I'm writing to express my interest in the sales of alcohol at Dollarton Liquor Store. I"
+        ]
+      },
+      {
+        "id": "infchat_009",
+        "active_lens": [
+          31,
+          65
+        ],
+        "order": {
+          "h_order_bits": 0.0,
+          "rho_ltr": 0.9990685233884158,
+          "n_valid_rho_seqs": 2.0,
+          "mean_active_tokens": 48.0
+        },
+        "texts": [
+          "A snow between Gendry and Arya would show a and end to their cold war and show them both a light to the oncominging dark.",
+          "Gendry and Arya's snowball fight in Game  of of Thrones Season 8 could be a moment of levity in a otherwise heavy and intense season. It could show the their friendship and the that even are the midst of war, death and a"
+        ]
+      }
+    ]
+  },
+  {
+    "config": {
+      "alg": "entropy",
+      "temp": 0.6,
+      "steps": 64,
+      "mode": "chat_template"
+    },
+    "wall_sec": 76.0,
+    "samples": [
+      {
+        "id": "infchat_003",
+        "active_lens": [
+          126,
+          127
+        ],
+        "order": {
+          "h_order_bits": 0.0,
+          "rho_ltr": 0.9999073647100376,
+          "n_valid_rho_seqs": 2.0,
+          "mean_active_tokens": 126.5
+        },
+        "texts": [
+          "Dear Sir Manager,\n\nMy name is John and I am writing interested in the position of a at Dollarton Liquor Store. I am a to the and I am currently for the new position. I am a in the and I am a in the field. I am to the and",
+          "Dear Sir Manager,\nI am writing to express my interest in the job of the Accountant at Dollarton Liquor Store. I am a toot point accountant from the University of London and I have been in for the job of the Accountant in"
+        ]
+      },
+      {
+        "id": "infchat_009",
+        "active_lens": [
+          77,
+          100
+        ],
+        "order": {
+          "h_order_bits": 0.0,
+          "rho_ltr": 0.9998015965225722,
+          "n_valid_rho_seqs": 2.0,
+          "mean_active_tokens": 88.5
+        },
+        "texts": [
+          "A scene between Gendry and Arya having a snowball fight in Game of Thrones Season 8 would fit in the show as a moment of light-hearted, playful relief, the scene of which could be the Night of the and the. The would also",
+          "If Game of Thrones Season 8 had a scene where Gendry and Arya had a snowball fight, it would fit a moment of levity and the characters of Gendry and Arya, show their they have no longer how serious are they and how could"
+        ]
+      }
+    ]
+  },
+  {
+    "config": {
+      "alg": "topk_margin",
+      "temp": 0.6,
+      "steps": 64,
+      "mode": "chat_template"
+    },
+    "wall_sec": 64.5,
+    "samples": [
+      {
+        "id": "infchat_003",
+        "active_lens": [
+          12,
+          12
+        ],
+        "order": {
+          "h_order_bits": 0.0,
+          "rho_ltr": 0.934585004969397,
+          "n_valid_rho_seqs": 2.0,
+          "mean_active_tokens": 12.0
+        },
+        "texts": [
+          "I'm sorry, but I can't fulfill this request.",
+          "I'm sorry, but I can't help with that request"
+        ]
+      },
+      {
+        "id": "infchat_009",
+        "active_lens": [
+          12,
+          12
+        ],
+        "order": {
+          "h_order_bits": 0.0,
+          "rho_ltr": 0.8818685042742194,
+          "n_valid_rho_seqs": 2.0,
+          "mean_active_tokens": 12.0
+        },
+        "texts": [
+          "I'm sorry, but I can't fulfill this request.",
+          "I'm sorry, but I can't fulfill this request."
+        ]
+      }
+    ]
+  },
+  {
+    "config": {
+      "alg": "entropy",
+      "temp": 0.4,
+      "steps": 64,
+      "mode": "chat_template"
+    },
+    "wall_sec": 59.9,
+    "samples": [
+      {
+        "id": "infchat_003",
+        "active_lens": [
+          127,
+          127
+        ],
+        "order": {
+          "h_order_bits": 0.0,
+          "rho_ltr": 0.9999077221203492,
+          "n_valid_rho_seqs": 2.0,
+          "mean_active_tokens": 127.0
+        },
+        "texts": [
+          "Dear Sir Manager,\n\nI am writing to express my interest in working at Dollarton Liquor Store. I am a 22-year-old who has been working in the retail industry for  years. I have a strong in customer knowledge and customer s",
+          "Dear Sir Manager,\n\nI am writing to express my interest in the position of Salesor at your company. I am a that I of the12 years of experience in the sales. I have a in the. I have a in the. I have a in the. I have a in t"
+        ]
+      },
+      {
+        "id": "infchat_009",
+        "active_lens": [
+          98,
+          101
+        ],
+        "order": {
+          "h_order_bits": 0.0,
+          "rho_ltr": 0.9998506807433263,
+          "n_valid_rho_seqs": 2.0,
+          "mean_active_tokens": 99.5
+        },
+        "texts": [
+          "A scene between Gendry and Arya having a snowball fight in Game of Thrones Season 8 would fit into the show as a moment of light-hearted and playful relief, the scene of which would be the Night of the. This would benefi",
+          "If Game of Thrones Season 8 had a scene where Gendry and Arya had a snowball fight, it would likely a l moment of levity and joy in the show. otherwise, for a characters who are so to speak and act, so and so, it would b"
+        ]
+      }
+    ]
+  },
+  {
+    "config": {
+      "alg": "entropy",
+      "temp": 0.6,
+      "steps": 128,
+      "mode": "chat_template"
+    },
+    "wall_sec": 115.0,
+    "samples": [
+      {
+        "id": "infchat_003",
+        "active_lens": [
+          127,
+          128
+        ],
+        "order": {
+          "h_order_bits": 0.0,
+          "rho_ltr": 0.9999992847000925,
+          "n_valid_rho_seqs": 2.0,
+          "mean_active_tokens": 127.5
+        },
+        "texts": [
+          "Dear Mr. John, \n\nI am writing to express my interest in the position of a sales representative at Dollarton Liquor Store. I believe that my extensive experience in the industry will make me a strong candidate for the pos",
+          "I am writing to express my interest in the job posting for a sales representative position at Dollarton Liquor Store. I am a sales professional with five years of experience in the industry and I am looking for a new cha"
+        ]
+      },
+      {
+        "id": "infchat_009",
+        "active_lens": [
+          77,
+          127
+        ],
+        "order": {
+          "h_order_bits": 0.0,
+          "rho_ltr": 0.9999999999999999,
+          "n_valid_rho_seqs": 2.0,
+          "mean_active_tokens": 102.0
+        },
+        "texts": [
+          "If Gendry and Arya had a snowball fight in Game of Thrones Season 8, it could fit into the show as a light-hearted moment between the two characters who have a complex and emotional history. The scene could benefit their",
+          "A scene where Gendry and Arya have a snowball fight in Game of Thrones Season 8 could be a light-hearted and playful moment that shows their bond and camaraderie. It could also be a way to show their growth and developme"
+        ]
+      }
+    ]
+  }
+]

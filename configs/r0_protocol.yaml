@@ -1,0 +1,149 @@
+# Locked R0 Experimental Protocol for Diffusion Knowledge Collapse Study
+seed: 42
+
+hardware:
+  device: cuda
+  quantization:
+    load_in_4bit: true
+    bnb_4bit_quant_type: nf4
+    bnb_4bit_use_double_quant: true
+    bnb_4bit_compute_dtype: float16
+  torch_dtype: float16
+  attn_implementation: sdpa
+  batch_size: 4
+  max_vram_gb_gate: 12.5
+
+models:
+  primary_pair:
+    dllm_base: Dream-org/Dream-v0-Base-7B
+    dllm_instruct: Dream-org/Dream-v0-Instruct-7B
+    ar_base: Qwen/Qwen2.5-7B
+    ar_instruct: Qwen/Qwen2.5-7B-Instruct
+  cross_check_pair:
+    dllm_base: GSAI-ML/LLaDA-8B-Base
+    dllm_instruct: GSAI-ML/LLaDA-8B-Instruct
+    ar_base: meta-llama/Meta-Llama-3.1-8B
+    ar_instruct: meta-llama/Meta-Llama-3.1-8B-Instruct
+  evaluator:
+    embedder: BAAI/bge-m3
+    external_ppl: Qwen/Qwen2.5-7B-Instruct
+
+decoding:
+  temperature: 0.6
+  top_p: 0.95
+  top_k: null
+  alg_default: entropy
+  alg_temp: 0.0
+  eps: 0.001
+  steps_default: 64
+  steps_qa: 64
+  steps_open: 128
+  steps_sweep_fm3: [128, 64, 32, 16]
+  algs_sweep_fm4: [origin, maskgit_plus, topk_margin, entropy]
+
+datasets:
+  coverageqa:
+    path: data/frozen/coverageqa.jsonl
+    max_new_tokens: 64
+    pilot_n: 30
+    full_n: 145
+  popqa_stratified:
+    path: data/frozen/popqa_stratified.jsonl
+    max_new_tokens: 64
+    pilot_n: 40   # 20 Head + 20 Tail
+    full_n: 200   # 100 Head + 100 Tail
+  infinity_chat100:
+    path: data/frozen/infinity_chat100.jsonl
+    max_new_tokens: 128
+    pilot_n: 30
+    full_n: 100
+
+budgets:
+  pilot_r5:
+    K: 8
+    total_questions: 100
+  full_r6:
+    K: 16
+    total_questions: 445
+
+prompts:
+  # Primary prompt protocol: identical few-shot completion for Base and Instruct
+  # to eliminate chat-template boilerplate bias in Base vs Instruct comparisons.
+  qa_fewshot_prefix: |
+    Answer each question concisely with a single factual answer.
+
+    Question: Name a country in South America. Only provide the answer without explanation or punctuation.
+    Answer: Brazil
+
+    Question: What is the capital of Japan?
+    Answer: Tokyo
+
+    Question: Name a noble gas. Only provide the answer without explanation or punctuation.
+    Answer: Argon
+
+  open_fewshot_prefix: |
+    Provide a direct, helpful response to each request.
+
+    Request: Write a one-sentence tagline for a coffee shop.
+    Response: Freshly roasted beans brewed to brighten every morning.
+
+    Request: {query}
+    Response:
+
+metrics:
+  early_phase_frac: 0.25
+  vendi_orders: [0.5, 1.0, .inf]
+  bootstrap_resamples: 1000
+  alpha: 0.05
+  # Normalized lowercase tokens considered structural/function/boilerplate for EBLR
+  eblr_boilerplate_tokens:
+    - a
+    - an
+    - the
+    - is
+    - are
+    - was
+    - were
+    - be
+    - been
+    - being
+    - of
+    - "in"
+    - "on"
+    - "at"
+    - "to"
+    - "for"
+    - "from"
+    - "by"
+    - "with"
+    - "as"
+    - "that"
+    - "this"
+    - "these"
+    - "those"
+    - "it"
+    - "its"
+    - "there"
+    - "here"
+    - "sure"
+    - "certainly"
+    - "yes"
+    - answer
+    - response
+    - one
+    - some
+    - such
+    - following
+    - based
+    - ","
+    - "."
+    - ":"
+    - ";"
+    - "-"
+    - "!"
+    - "?"
+    - "("
+    - ")"
+    - "\""
+    - "'"
+    - "\n"

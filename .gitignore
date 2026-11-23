@@ -1,0 +1,23 @@
+# Python bytecode and local caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.serena/
+
+# Downloaded datasets
+/data/
+!/data/
+/data/**
+!/data/**/
+!/data/**/*.md
+
+# Run logs and generated results
+/logs/
+/results/
+!/results/
+/results/**
+!/results/**/
+!/results/**/*.md
+!/results/**/*report*.json
+!/results/**/*verdict*.json
+!/results/**/*calibration*.json

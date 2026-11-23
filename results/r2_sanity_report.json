@@ -1,0 +1,80 @@
+{
+  "gpu": "Tesla T4",
+  "vram_gate_gb": 12.5,
+  "dream_instruct": {
+    "model_id": "Dream-org/Dream-v0-Instruct-7B",
+    "load_sec": 2711.79,
+    "load_vram_gb": 6.586,
+    "qa_64": {
+      "batch_size": 4,
+      "steps": 64,
+      "max_new_tokens": 64,
+      "wall_sec": 50.27,
+      "sec_per_sample": 12.57,
+      "peak_vram_gb": 6.672,
+      "leave_entity_masked_prob_ex0": 0.684872,
+      "order_stats": {
+        "h_order_bits": 1.734375,
+        "rho_ltr": 0.20098100941116903
+      },
+      "sample_outputs": [
+        "Germany",
+        "Germany",
+        "Boston",
+        "Mia Farrow"
+      ]
+    },
+    "inf_128": {
+      "batch_size": 4,
+      "steps": 64,
+      "max_new_tokens": 128,
+      "wall_sec": 140.65,
+      "sec_per_sample": 35.16,
+      "peak_vram_gb": 8.031,
+      "order_stats": {
+        "h_order_bits": 1.6893385741680436,
+        "rho_ltr": -0.3672908498051757
+      },
+      "sample_outputs": [
+        "Why don't electric cars run on adventures? No charge.",
+        "<",
+        "The",
+        ""
+      ]
+    },
+    "gate_passed": true
+  },
+  "qwen_instruct": {
+    "model_id": "Qwen/Qwen2.5-7B-Instruct",
+    "load_sec": 99.85,
+    "load_vram_gb": 8.756,
+    "qa_64": {
+      "batch_size": 4,
+      "max_new_tokens": 64,
+      "wall_sec": 11.61,
+      "sec_per_sample": 2.9,
+      "peak_vram_gb": 8.52,
+      "sample_outputs": [
+        "France",
+        "Belgium",
+        "Brooklyn",
+        "Mia Farrow"
+      ]
+    },
+    "inf_128": {
+      "batch_size": 4,
+      "max_new_tokens": 128,
+      "wall_sec": 23.56,
+      "sec_per_sample": 5.89,
+      "peak_vram_gb": 8.517,
+      "sample_outputs": [
+        "Why did the electric car go to therapy? Because it has a charging 'issues'!",
+        "[Name],\nI am excited to express my interest in the Assistant Store Manager position at Dollarton Liquor Store. With a passion for retail and a proven track record of successful leadership in similar e",
+        "In this modern action thriller, a dedicated and skilled emergency responder works tirelessly to save lives during disaster relief efforts. However, they soon discover that a powerful corporation is re",
+        "This scene could serve as a lighthearted moment amidst the show's darker tones, allowing Gendry and Arya to bond in a more casual setting while highlighting their shared commonality and growth through"
+      ]
+    },
+    "gate_passed": true
+  },
+  "estimated_r5_pilot_gpu_hours": 15.45
+}
