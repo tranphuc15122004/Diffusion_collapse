@@ -1,0 +1,10 @@
+\usepackage{float}
+\floatplacement{figure}{H}
+\usepackage{booktabs}
+\usepackage{etoolbox}
+\usepackage{xcolor}
+\definecolor{linkblue}{HTML}{1F4E78}
+\hypersetup{colorlinks=true, linkcolor=linkblue, urlcolor=linkblue}
+\AtBeginEnvironment{longtable}{\scriptsize\setlength{\tabcolsep}{4pt}\renewcommand{\arraystretch}{1.18}}
+\AtBeginEnvironment{tabular}{\scriptsize\setlength{\tabcolsep}{4pt}}
+\setlength{\emergencystretch}{3em}

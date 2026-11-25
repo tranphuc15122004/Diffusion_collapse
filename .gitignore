@@ -21,3 +21,9 @@ __pycache__/
 !/results/**/*report*.json
 !/results/**/*verdict*.json
 !/results/**/*calibration*.json
+
+# Local R5 report and generated exports
+/docs/R5_PILOT_FULL_REPORT.md
+/docs/R5_PILOT_FULL_REPORT.html
+/docs/R5_PILOT_FULL_REPORT.pdf
+/docs/figures/fig[1-5]_*.png
